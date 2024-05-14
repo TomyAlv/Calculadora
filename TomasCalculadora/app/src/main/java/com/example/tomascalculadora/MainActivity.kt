@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity()
                 // Listener Botones
                 button.setOnClickListener {
                     // Boton Clicked
-                    val buttonText = button.text.toString()
+                    val buttonText = button.text.toString()    //get Text from the Button
                     when{
-                        buttonText.matches(Regex("[0-9]"))->{
+                        buttonText.matches(Regex("[0-9]"))->{    //if is 0 - 9 adds it to the result
                             if(currentOperator.isEmpty())
                             {
                                 firstnumber+=buttonText
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity()
                                 tvResult.text = currentNumber
                             }
                         }
-                        buttonText.matches(Regex("[+\\-*/]"))->{
+                        buttonText.matches(Regex("[+\\-*/]"))->{        //if the button is a operator resets the actual number to 0
                             currentNumber = ""
                             if (tvResult.text.toString().isNotEmpty())
                             {
@@ -55,16 +55,16 @@ class MainActivity : AppCompatActivity()
                                 tvResult.text = "0"
                             }
                         }
-                        buttonText == "="->{
+                        buttonText == "="->{            //if the button is equal it obtains the result
                             if (currentNumber.isNotEmpty()&& currentOperator.isNotEmpty())
                             {
-                                tvFormula.text = "$firstnumber$currentOperator$currentNumber"
+                                tvFormula.text = "$firstnumber$currentOperator$currentNumber"            //gets the expression and shows it in the tvresult
                                 result = evaluateExpression(firstnumber,currentNumber,currentOperator)
                                 firstnumber = result
                                 tvResult.text = result
                             }
                         }
-                        buttonText == "."->{
+                        buttonText == "."->{            //user wants to add a deciaml
                             if(currentOperator.isEmpty())
                             {
                                 if (! firstnumber.contains("."))
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity()
                                 }
                             }
                         }
-                        buttonText == "AC"->{
+                        buttonText == "AC"->{            //if press AC it deletes all
                             currentNumber = ""
                             firstnumber = ""
                             currentOperator = ""
