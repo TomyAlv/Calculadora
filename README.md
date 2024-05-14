@@ -31,7 +31,7 @@
 ###
 
 
-https://github.com/TomyAlv/Calculadora/assets/107062801/ce435d81-d786-48ca-bc6a-42760d87c06f
+https://github.com/TomyAlv/Calculadora/assets/107062801/0be4dc79-2ff6-491a-bff1-b406601d8b16
 
 
 
